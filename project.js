@@ -15,9 +15,11 @@ const depositMoney = () => {
         const numberDepositAmount = parseFloat(depositAmount);
 
         if (isNaN(numberDepositAmount) || numberDepositAmount <= 0) {
-            console.log('Invalid deposit amount, try again');
+            console.log('Invalid deposit amount, try again!');
+        } else {
+            return numberDepositAmount;
         }
     }
 };
 
-depositMoney();
+const depositAmount = depositMoney();
