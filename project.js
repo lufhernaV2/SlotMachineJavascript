@@ -14,17 +14,17 @@ const ROWS = 3;
 const COLUMNS = 3;
 // symbols that you can have in each reel and each columns
 const SYMBOLS_COUNT = {
-    'A': 2,
-    'B': 4,
-    'C': 6,
-    'D': 8
+    A: 2,
+    B: 4,
+    C: 6,
+    D: 8
 };
 // value of each symbol and what it is going to be multiplied by
 const SYMBOL_VALUES = {
-    'A': 5,
-    'B': 4,
-    'C': 3,
-    'D': 2
+    A: 5,
+    B: 4,
+    C: 3,
+    D: 2
 };
 
 const depositMoney = () => {
@@ -66,6 +66,14 @@ const getTotalBet = (balance, lines) => {
     }
 };
 
-let balance = depositMoney();
-const numberOfLines = getNumberOfLines();
-const bet = getTotalBet(balance, numberOfLines);
+const spin = () => {
+    const symbols = [];
+    for (const [symbol, count] of Object.entries(SYMBOLS_COUNT)) {
+        console.log(symbol, count);
+    }
+}
+
+// let balance = depositMoney();
+// const numberOfLines = getNumberOfLines();
+// const bet = getTotalBet(balance, numberOfLines);
+const playGame = spin();
