@@ -7,7 +7,25 @@
 6. Give the user their winnings
 7. Play again
 */
+
 const prompt = require("prompt-sync")();
+// global variables
+const ROWS = 3;
+const COLUMNS = 3;
+// symbols that you can have in each reel and each columns
+const SYMBOLS_COUNT = {
+    'A': 2,
+    'B': 4,
+    'C': 6,
+    'D': 8
+};
+// value of each symbol and what it is going to be multiplied by
+const SYMBOL_VALUES = {
+    'A': 5,
+    'B': 4,
+    'C': 3,
+    'D': 2
+};
 
 const depositMoney = () => {
     while (true) {
