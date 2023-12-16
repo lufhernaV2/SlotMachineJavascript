@@ -74,6 +74,18 @@ const spin = () => {
         }
     }
     const reels = [[], [], []];
+
+    for (let i = 0; i < COLUMNS; i++) {
+        const reelSymbols = [...symbols];
+        for (let j = 0; j < ROWS; j++) {
+            // generates random number in order to use it to select a specific index
+            const randomIndex = Math.floor(Math.random() * reelSymbols.length);
+            const selectedSymbol = reelSymbols[random];
+            reels[i].push(selectedSymbol);
+            // removes the element from the index
+            reelSymbols.splice(randomIndex, 1);
+        }
+    }
 };
 
 // let balance = depositMoney();
