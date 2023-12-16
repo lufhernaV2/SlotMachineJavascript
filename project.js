@@ -80,9 +80,10 @@ const spin = () => {
         for (let j = 0; j < ROWS; j++) {
             // generates random number in order to use it to select a specific index
             const randomIndex = Math.floor(Math.random() * reelSymbols.length);
-            const selectedSymbol = reelSymbols[random];
+            const selectedSymbol = reelSymbols[randomIndex];
+            // adding the random symbol
             reels[i].push(selectedSymbol);
-            // removes the element from the index
+            // removes the random symbol from the reelsymbols array
             reelSymbols.splice(randomIndex, 1);
         }
     }
