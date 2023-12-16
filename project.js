@@ -93,8 +93,38 @@ const spin = () => {
     return reels;
 };
 
-// let balance = depositMoney();
-// const numberOfLines = getNumberOfLines();
-// const bet = getTotalBet(balance, numberOfLines);
+const transpose = (reels) => {
+    const rows = [];
+
+    for (let i = 0; i < ROWS; i++) {
+        rows.push([]);
+        for (let j = 0; j < COLUMNS; j++) {
+            rows[i].push(reels[j][i]);
+        }
+    }
+    return rows
+};
+
+const print = (rows) => {
+    for (const row of rows) {
+        let rowString = "";
+        for (const [i, symbol] of rows.entries()) {
+            rowString += symbol;
+            if (i != rows.length - 1) {
+                rowString += " | "
+            }
+        }
+        console.log(rowString);
+    }
+};
+
+const getWinnings = (rows, bet, lines) => {
+
+}
+
+let balance = depositMoney();
+const numberOfLines = getNumberOfLines();
+const bet = getTotalBet(balance, numberOfLines);
 const playGame = spin();
-console.log(playGame);
+const rows = transpose(playGame);
+print(rows);
