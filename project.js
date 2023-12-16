@@ -67,15 +67,18 @@ const getTotalBet = (balance, lines) => {
 };
 
 const spin = () => {
+    // contains all the available symbols
     const symbols = [];
     for (const [symbol, count] of Object.entries(SYMBOLS_COUNT)) {
         for (let i = 0; i < count; i++) {
             symbols.push(symbol);
         }
     }
-    const reels = [[], [], []];
 
+    const reels = [];
     for (let i = 0; i < COLUMNS; i++) {
+        reels.push([]);
+        // below is a copy of the symbols array
         const reelSymbols = [...symbols];
         for (let j = 0; j < ROWS; j++) {
             // generates random number in order to use it to select a specific index
@@ -87,9 +90,11 @@ const spin = () => {
             reelSymbols.splice(randomIndex, 1);
         }
     }
+    return reels;
 };
 
 // let balance = depositMoney();
 // const numberOfLines = getNumberOfLines();
 // const bet = getTotalBet(balance, numberOfLines);
 const playGame = spin();
+console.log(playGame);
